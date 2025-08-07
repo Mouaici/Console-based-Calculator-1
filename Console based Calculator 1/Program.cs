@@ -43,18 +43,18 @@ namespace Console_based_Calculator_1
             switch (Console.ReadLine())
             {
                 case "a":
-                    Console.WriteLine("Your Result: " + (number1 + number2));
+                    Console.WriteLine("Your Result: " + Add (number1 , number2));
                     break;
                 case "s":
-                    Console.WriteLine("Result: " + (number1 - number2));
+                    Console.WriteLine("Result: " + Subtract(number1 , number2));
                     break;
                 case "m":
-                    Console.WriteLine("Result: " + (number1 * number2));
+                    Console.WriteLine("Result: " + Multiply(number1 , number2));
                     break;
                 case "d":
                     if (number2 != 0)
                     {
-                        Console.WriteLine("Result: " + (number1 / number2));
+                        Console.WriteLine("Result: " + Divide(number1 , number2));
                     }
                     else
                     {
@@ -76,13 +76,35 @@ namespace Console_based_Calculator_1
 
 
         }
-             
-               
 
 
-
-
+        static int Add(int number1 , int number2)
+        {
+        
+            return number1 + number2;
+        }
+        static int Subtract(int number1, int number2)
+        {
            
+            return number1 - number2;
+        }
+        static int Multiply(int number1, int number2)
+        {
+            
+            return number1 * number2;
+        }
+        static int Divide(int number1, int number2)
+        {
+            if (number2 != 0)
+            {
+                
+                return number1 / number2;
+            }
+            else
+            {
+                Console.WriteLine("Error: Division by zero is not allowed.");
+                return 0; // or throw an exception
+            }
 
 
 
@@ -104,9 +126,13 @@ namespace Console_based_Calculator_1
 
 
 
-    }
+
+
+
+
+        }
 }
-
+}
 
 
 

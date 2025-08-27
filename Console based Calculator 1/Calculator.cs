@@ -4,7 +4,7 @@ namespace Console_based_Calculator_1
 {
     public class Calculator
     {
-       
+      
 
         public int Add(int a, int b)
         {

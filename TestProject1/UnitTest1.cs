@@ -1,54 +1,71 @@
+using System.Runtime.Intrinsics.X86;
 
-using Console_based_Calculator_1;
-
-
-    namespace TestProject1 
-
+namespace TestProject1
+{
+    public class UnitTest1
     {
-        public class CalculatorTests
+        private int result;
+        private int number1;
+        private int number2;
+
+        [Fact]
+#pragma warning disable xUnit1028 // Test method must have valid return type
+        public int TestAdd()
+#pragma warning restore xUnit1028 // Test method must have valid return type
         {
-            private readonly Calculator _calc;
-
-
-
-            public CalculatorTests()
-            {
-                 _calc = new Calculator();
-            }
-
-            [Fact]
-            public void Add_ShouldReturnCorrectSum()
-            {
-                int result = _calc.Add(5, 3);
-                Assert.Equal(8, result);
-            }
-
-            //private int Add(int v1, int v2)
-            //{
-            //    throw new NotImplementedException();
-            //}
-
-            //[Fact]
-            //public void SubtractShouldReturnCorrectDifference()
-            //{
-            //    int result = _calc.Subtract_ShouldReturnCorrectDifference(10, 4);
-            //    Assert.Equal(6, result);
-            //}
-
-            //private int Subtract_ShouldReturnCorrectDifference(int v1, int v2)
-            //{
-            //    throw new NotImplementedException();
-            //}
-
-            //[Fact]
-            //public void DivideByZeroShouldThrowException()
-            //{
-            //    Assert.Throws<DivideByZeroException>(() => _calc.Divide_ByZero_ShouldThrowException(10, 0));
-            //}
-
-            //private void Divide_ByZero_ShouldThrowException(int v1, int v2)
-            //{
-            //    throw new NotImplementedException();
-            //}
+            return number1 + number2;
         }
+
+        private int Add(int v1, int v2)
+        {
+            throw new NotImplementedException();
+        }
+
+        [Fact]
+#pragma warning disable xUnit1028 // Test method must have valid return type
+        public int TestSubtract()
+#pragma warning restore xUnit1028 // Test method must have valid return type
+        {
+            return number1 - number2;
+        }
+
+        private int Subtract(int v1, int v2)
+        {
+            throw new NotImplementedException();
+        }
+
+        [Fact]
+#pragma warning disable xUnit1028 // Test method must have valid return type
+        public int TestMultiply()
+#pragma warning restore xUnit1028 // Test method must have valid return type
+        {
+            return number1 * number2;
+        }
+
+        private int Multiply(int v1, int v2)
+        {
+            throw new NotImplementedException();
+        }
+
+        [Fact]
+        public int TestDivide()
+        {
+            if (number2 == 0)
+            {
+                Console.WriteLine("Error: Division by zero is not allowed.");
+                return 0; // or throw an exception
+            }
+            else
+            {
+                return number1 / number2;
+            }
+        }
+        private int Divide(int v1, int v2)
+        {
+            throw new NotImplementedException();
+        }
+        
+
+
     }
+}

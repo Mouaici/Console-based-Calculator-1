@@ -1,6 +1,11 @@
 using System.Runtime.Intrinsics.X86;
+using static New_calculator.Program;
 
-namespace TestProject1
+
+
+
+
+namespace UnitTest_New_calculator
 {
     public class UnitTest1
     {
@@ -8,63 +13,46 @@ namespace TestProject1
         private int number1;
         private int number2;
 
-        [Fact]
-#pragma warning disable xUnit1028 // Test method must have valid return type
-        public int TestAdd()
-#pragma warning restore xUnit1028 // Test method must have valid return type
-        {
-            return number1 + number2;
-        }
-
-        private int Add(int v1, int v2)
-        {
-            throw new NotImplementedException();
-        }
+      
 
         [Fact]
-#pragma warning disable xUnit1028 // Test method must have valid return type
-        public int TestSubtract()
-#pragma warning restore xUnit1028 // Test method must have valid return type
+
+        public void TestAdd()
+
         {
-            return number1 - number2;
+            int result = Add(5, 8);
+            Assert.Equal(13, result);
+
         }
 
-        private int Subtract(int v1, int v2)
+
+        [Fact]
+        public void TestSubtract()
         {
-            throw new NotImplementedException();
+            int result = Subtract(5, 8);
+            Assert.Equal(-3, result);
         }
 
         [Fact]
-#pragma warning disable xUnit1028 // Test method must have valid return type
-        public int TestMultiply()
-#pragma warning restore xUnit1028 // Test method must have valid return type
+        public void TestMultiply()
         {
-            return number1 * number2;
-        }
-
-        private int Multiply(int v1, int v2)
-        {
-            throw new NotImplementedException();
+            int result = Multiply(5, 8);
+            Assert.Equal(40, result);
         }
 
         [Fact]
-        public int TestDivide()
+        public void TestDivide()
         {
-            if (number2 == 0)
-            {
-                Console.WriteLine("Error: Division by zero is not allowed.");
-                return 0; // or throw an exception
-            }
-            else
-            {
-                return number1 / number2;
-            }
+            int result = _Divide(8, 4);
+            Assert.Equal(2, result);
         }
-        private int Divide(int v1, int v2)
+
+        [Fact]
+        public void TestDivideByZero()
         {
-            throw new NotImplementedException();
+            int result = _Divide(8, 0);
+            Assert.Equal(0, result);
         }
-        
 
 
     }
